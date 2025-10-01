@@ -1,63 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - Communication</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Communication</title>
+  <meta name="description" content="Portfolio d'activités en communication : projets, études de cas, contenus multimédias." />
+  <style>
+    :root { --max: 1000px; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; line-height:1.6; color:#111; }
+    header { padding:48px 20px; border-bottom:1px solid #eee; }
+    nav a { margin-right:16px; text-decoration:none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    h1,h2 { line-height:1.2; margin: 0.4em 0; }
+    .tag { display:inline-block; padding:2px 8px; border:1px solid #ddd; border-radius:999px; font-size:12px; margin-right:6px; }
+    .grid { display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+    .card { border:1px solid #eee; border-radius:14px; padding:18px; }
+    .card h3 { margin:8px 0; }
+    .muted { color:#555; }
+    footer { border-top:1px solid #eee; padding:24px 20px; margin-top:40px; }
+    a { color: #0a58ca; }
+    img { max-width:100%; height:auto; border-radius:10px; }
+    .hero { display:flex; gap:24px; flex-wrap:wrap; align-items:center; }
+    .hero .intro { flex: 1; min-width: 260px; }
+  </style>
 </head>
 <body>
-    <header>
+  <a href="#contenu" class="visually-hidden">Aller au contenu</a>
+
+  <header>
+    <div class="wrap hero">
+      <div class="intro">
+        <h1>Ton Nom – Portfolio Communication</h1>
+        <p class="muted">Étudiant·e en communication / international business. Rédaction, storytelling, social media, gestion de projets, présentation & analyses.</p>
         <nav>
-            <h1>Mon Portfolio</h1>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#activites">Activités</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+          <a href="#apropos">À propos</a>
+          <a href="#competences">Compétences</a>
+          <a href="#projets">Projets</a>
+          <a href="#contact">Contact</a>
         </nav>
-    </header>
+      </div>
+      <img src="assets/photo.jpg" alt="Portrait" width="180" height="180" />
+    </div>
+  </header>
 
-    <main>
-        <section id="accueil">
-            <h2>Bienvenue sur mon Portfolio</h2>
-            <p>Cours de Communication - Présentation de mes activités</p>
-        </section>
+  <main id="contenu" class="wrap">
+    <section id="apropos">
+      <h2>À propos</h2>
+      <p>Je conçois et réalise des projets de communication : articles, posts, campagnes, présentations, dossiers. J’aime relier stratégie, créativité et résultats mesurables.</p>
+    </section>
 
-        <section id="activites">
-            <h2>Mes Activités</h2>
-            <div class="activite-grid">
-                <div class="activite-card">
-                    <h3>Activité 1</h3>
-                    <p>Description de l'activité...</p>
-                    <img src="images/activite1.jpg" alt="Activité 1">
-                </div>
-                <div class="activite-card">
-                    <h3>Activité 2</h3>
-                    <p>Description de l'activité...</p>
-                    <img src="images/activite2.jpg" alt="Activité 2">
-                </div>
-            </div>
-        </section>
+    <section id="competences">
+      <h2>Compétences</h2>
+      <p>
+        <span class="tag">Rédaction</span>
+        <span class="tag">Storytelling</span>
+        <span class="tag">Réseaux sociaux</span>
+        <span class="tag">PAO basique (Canva)</span>
+        <span class="tag">Gestion de projet</span>
+        <span class="tag">Analyse & synthèse</span>
+      </p>
+    </section>
 
-        <section id="projets">
-            <h2>Mes Projets de Communication</h2>
-            <ul>
-                <li>Projet 1 : ...</li>
-                <li>Projet 2 : ...</li>
-                <li>Projet 3 : ...</li>
-            </ul>
-        </section>
+    <section id="projets">
+      <h2>Projets & études de cas</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/case-1.jpg" alt="Visuel du projet 1" />
+          <h3>Campagne “Stand Up for Sudan”</h3>
+          <p class="muted">Rôle : coordination & communication digitale</p>
+          <ul>
+            <li>Objectif : sensibilisation et collecte de fonds.</li>
+            <li>Actions : calendrier éditorial, visuels, prise de parole, relations avec partenaires.</li>
+            <li>Résultats : portée, engagement, participation (chiffres si possible).</li>
+          </ul>
+          <p><a href="assets/dossier-campagne.pdf">Dossier PDF</a> · <a href="https://exemple.com" target="_blank" rel="noopener">Lien externe</a></p>
+        </article>
 
-        <section id="contact">
-            <h2>Me Contacter</h2>
-            <p>Email : votre.email@exemple.com</p>
-        </section>
-    </main>
+        <article class="card">
+          <img src="assets/case-2.jpg" alt="Visuel du projet 2" />
+          <h3>Étude & présentation – Marché FR</h3>
+          <p class="muted">Rôle : analyse, slides, prise de parole</p>
+          <ul>
+            <li>Méthodes : SWOT/PESTEL, persona, positionnement.</li>
+            <li>Livrables : rapport, pitch deck (5–10 min).</li>
+            <li>Impact : recommandations actionnables.</li>
+          </ul>
+          <p><a href="assets/presentation.pdf">Slides PDF</a></p>
+        </article>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 - Mon Portfolio de Communication</p>
-    </footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email : <a href="mailto:prenom.nom@email.com">prenom.nom@email.com</a> ·
+         LinkedIn : <a href="https://linkedin.com/in/tonprofil">tonprofil</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>© <span id="year"></span> Ton Nom — Portfolio Communication.</small>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
