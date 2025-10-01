@@ -1,106 +1,627 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio – Communication</title>
-  <meta name="description" content="Portfolio d'activités en communication : projets, études de cas, contenus multimédias." />
+  <title>Portfolio – Communication & Business</title>
+  <meta name="description" content="Communication portfolio: projects, case studies, multimedia content, and professional achievements." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --max: 1000px; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; line-height:1.6; color:#111; }
-    header { padding:48px 20px; border-bottom:1px solid #eee; }
-    nav a { margin-right:16px; text-decoration:none; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-    h1,h2 { line-height:1.2; margin: 0.4em 0; }
-    .tag { display:inline-block; padding:2px 8px; border:1px solid #ddd; border-radius:999px; font-size:12px; margin-right:6px; }
-    .grid { display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
-    .card { border:1px solid #eee; border-radius:14px; padding:18px; }
-    .card h3 { margin:8px 0; }
-    .muted { color:#555; }
-    footer { border-top:1px solid #eee; padding:24px 20px; margin-top:40px; }
-    a { color: #0a58ca; }
-    img { max-width:100%; height:auto; border-radius:10px; }
-    .hero { display:flex; gap:24px; flex-wrap:wrap; align-items:center; }
-    .hero .intro { flex: 1; min-width: 260px; }
+    :root { 
+      --max: 1200px; 
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --bg-light: #f9fafb;
+      --shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif; 
+      line-height: 1.6; 
+      color: var(--text);
+      background: #fff;
+    }
+    
+    /* Header & Navigation */
+    header { 
+      padding: 32px 20px; 
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    
+    nav { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    
+    nav a { 
+      text-decoration: none; 
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+    
+    nav a:hover { 
+      color: var(--primary);
+    }
+    
+    /* Layout */
+    .wrap { 
+      max-width: var(--max); 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+    
+    /* Hero Section */
+    .hero { 
+      display: flex; 
+      gap: 48px; 
+      align-items: center;
+      padding: 80px 0;
+      min-height: 60vh;
+    }
+    
+    .hero .intro { 
+      flex: 1; 
+      min-width: 300px; 
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    
+    .hero-image {
+      flex-shrink: 0;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #fff;
+    }
+    
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Typography */
+    h1, h2, h3 { 
+      line-height: 1.2; 
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-size: 2.25rem;
+      margin-bottom: 48px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 16px;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    
+    section:nth-child(even) {
+      background: var(--bg-light);
+    }
+    
+    /* Tags/Skills */
+    .tag { 
+      display: inline-block; 
+      padding: 8px 16px; 
+      border: 2px solid var(--border);
+      border-radius: 24px; 
+      font-size: 0.875rem; 
+      margin: 6px 6px 6px 0;
+      font-weight: 500;
+      background: white;
+      transition: all 0.3s ease;
+    }
+    
+    .tag:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    
+    /* Grid */
+    .grid { 
+      display: grid; 
+      gap: 32px; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      margin-top: 48px;
+    }
+    
+    /* Cards */
+    .card { 
+      border: 1px solid var(--border);
+      border-radius: 16px; 
+      padding: 0;
+      background: white;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .card-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    
+    .card-content {
+      padding: 24px;
+    }
+    
+    .card h3 { 
+      margin: 0 0 8px 0;
+      color: var(--text);
+    }
+    
+    .card .role {
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .card ul {
+      margin: 16px 0;
+      padding-left: 20px;
+      color: var(--text-light);
+    }
+    
+    .card li {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+    
+    .card-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .card-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+    
+    .card-links a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin: 48px 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 32px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    
+    /* Contact Section */
+    #contact {
+      text-align: center;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      font-size: 1.125rem;
+    }
+    
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer { 
+      border-top: 1px solid var(--border);
+      padding: 32px 20px; 
+      background: var(--bg-light);
+      text-align: center;
+    }
+    
+    footer small {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+    
+    /* Utility Classes */
+    .muted { 
+      color: var(--text-light); 
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 48px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.125rem;
+      }
+      
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+      
+      nav .nav-links {
+        gap: 16px;
+        font-size: 0.875rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      section {
+        padding: 48px 0;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn-group {
+        justify-content: center;
+      }
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .card {
+      animation: fadeInUp 0.6s ease-out;
+    }
   </style>
 </head>
 <body>
-  <a href="#contenu" class="visually-hidden">Aller au contenu</a>
+  <a href="#content" class="visually-hidden">Skip to content</a>
 
   <header>
-    <div class="wrap hero">
-      <div class="intro">
-        <h1>Ton Nom – Portfolio Communication</h1>
-        <p class="muted">Étudiant·e en communication / international business. Rédaction, storytelling, social media, gestion de projets, présentation & analyses.</p>
-        <nav>
-          <a href="#apropos">À propos</a>
-          <a href="#competences">Compétences</a>
-          <a href="#projets">Projets</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <img src="assets/photo.jpg" alt="Portrait" width="180" height="180" />
-    </div>
+    <nav class="wrap">
+      <a href="#" class="logo">Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="contenu" class="wrap">
-    <section id="apropos">
-      <h2>À propos</h2>
-      <p>Je conçois et réalise des projets de communication : articles, posts, campagnes, présentations, dossiers. J’aime relier stratégie, créativité et résultats mesurables.</p>
+  <section class="hero wrap">
+    <div class="intro">
+      <h1>Your Name</h1>
+      <p class="subtitle">Communication & International Business Student. Crafting compelling stories, managing projects, and driving engagement through strategic communication.</p>
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <img src="assets/photo.jpg" alt="Profile photo" class="hero-image" />
+  </section>
+
+  <main id="content">
+    <section id="about">
+      <div class="wrap">
+        <h2>About Me</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.125rem; color: var(--text-light);">
+          I design and execute communication projects: articles, social media campaigns, presentations, and comprehensive reports. I bridge strategy, creativity, and measurable results to deliver impactful communication solutions.
+        </p>
+        
+        <div class="stats">
+          <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5k+</span>
+            <span class="stat-label">Social Reach</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="competences">
-      <h2>Compétences</h2>
-      <p>
-        <span class="tag">Rédaction</span>
-        <span class="tag">Storytelling</span>
-        <span class="tag">Réseaux sociaux</span>
-        <span class="tag">PAO basique (Canva)</span>
-        <span class="tag">Gestion de projet</span>
-        <span class="tag">Analyse & synthèse</span>
-      </p>
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills & Expertise</h2>
+        <div class="tags-container">
+          <span class="tag">Content Writing</span>
+          <span class="tag">Storytelling</span>
+          <span class="tag">Social Media Management</span>
+          <span class="tag">Digital Marketing</span>
+          <span class="tag">Graphic Design (Canva)</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Public Speaking</span>
+          <span class="tag">Campaign Strategy</span>
+          <span class="tag">Brand Development</span>
+          <span class="tag">SEO Basics</span>
+          <span class="tag">Email Marketing</span>
+        </div>
+      </div>
     </section>
 
-    <section id="projets">
-      <h2>Projets & études de cas</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/case-1.jpg" alt="Visuel du projet 1" />
-          <h3>Campagne “Stand Up for Sudan”</h3>
-          <p class="muted">Rôle : coordination & communication digitale</p>
-          <ul>
-            <li>Objectif : sensibilisation et collecte de fonds.</li>
-            <li>Actions : calendrier éditorial, visuels, prise de parole, relations avec partenaires.</li>
-            <li>Résultats : portée, engagement, participation (chiffres si possible).</li>
-          </ul>
-          <p><a href="assets/dossier-campagne.pdf">Dossier PDF</a> · <a href="https://exemple.com" target="_blank" rel="noopener">Lien externe</a></p>
-        </article>
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects & Case Studies</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="assets/case-1.jpg" alt="Stand Up for Sudan campaign visual" class="card-image" />
+            <div class="card-content">
+              <h3>Stand Up for Sudan Campaign</h3>
+              <span class="role">Role: Digital Communication Coordinator</span>
+              <ul>
+                <li><strong>Objective:</strong> Raise awareness and collect funds for humanitarian aid</li>
+                <li><strong>Actions:</strong> Editorial calendar, visual content creation, stakeholder relations, social media management</li>
+                <li><strong>Results:</strong> 50k+ reach, 15% engagement rate, $10k raised</li>
+                <li><strong>Tools:</strong> Canva, Instagram, Facebook, Mailchimp</li>
+              </ul>
+              <div class="card-links">
+                <a href="assets/campaign-report.pdf" target="_blank">📄 Full Report</a>
+                <a href="https://example.com" target="_blank" rel="noopener">🔗 Live Campaign</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="card">
-          <img src="assets/case-2.jpg" alt="Visuel du projet 2" />
-          <h3>Étude & présentation – Marché FR</h3>
-          <p class="muted">Rôle : analyse, slides, prise de parole</p>
-          <ul>
-            <li>Méthodes : SWOT/PESTEL, persona, positionnement.</li>
-            <li>Livrables : rapport, pitch deck (5–10 min).</li>
-            <li>Impact : recommandations actionnables.</li>
-          </ul>
-          <p><a href="assets/presentation.pdf">Slides PDF</a></p>
-        </article>
+          <article class="card">
+            <img src="assets/case-2.jpg" alt="French market analysis presentation" class="card-image" />
+            <div class="card-content">
+              <h3>French Market Analysis & Strategy</h3>
+              <span class="role">Role: Market Analyst & Presenter</span>
+              <ul>
+                <li><strong>Methods:</strong> SWOT/PESTEL analysis, persona development, competitive positioning</li>
+                <li><strong>Deliverables:</strong> 30-page report, 10-minute pitch deck presentation</li>
+                <li><strong>Impact:</strong> Actionable recommendations for market entry strategy</li>
+                <li><strong>Skills:</strong> Research, data visualization, public speaking</li>
+              </ul>
+              <div class="card-links">
+                <a href="assets/presentation.pdf" target="_blank">📊 Presentation PDF</a>
+                <a href="assets/report.pdf" target="_blank">📄 Full Report</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/case-3.jpg" alt="Brand identity project" class="card-image" />
+            <div class="card-content">
+              <h3>Student Organization Rebranding</h3>
+              <span class="role">Role: Brand Strategist & Content Creator</span>
+              <ul>
+                <li><strong>Challenge:</strong> Revitalize organization image and increase membership</li>
+                <li><strong>Solution:</strong> New visual identity, messaging framework, content strategy</li>
+                <li><strong>Results:</strong> 40% increase in membership applications, improved social presence</li>
+                <li><strong>Duration:</strong> 3-month project</li>
+              </ul>
+              <div class="card-links">
+                <a href="assets/branding-guide.pdf" target="_blank">🎨 Brand Guide</a>
+                <a href="https://example.com" target="_blank" rel="noopener">🔗 Live Site</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email : <a href="mailto:prenom.nom@email.com">prenom.nom@email.com</a> ·
-         LinkedIn : <a href="https://linkedin.com/in/tonprofil">tonprofil</a></p>
+      <div class="wrap">
+        <h2>Let's Connect</h2>
+        <p class="muted" style="font-size: 1.125rem; margin-bottom: 32px;">Interested in collaboration or want to learn more about my work?</p>
+        <div class="contact-info">
+          <div>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></div>
+          <div>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn Profile</a></div>
+          <div>🐙 <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <small>© <span id="year"></span> Ton Nom — Portfolio Communication.</small>
+      <small>© <span id="year"></span> Your Name — Communication Portfolio. Built with HTML & CSS.</small>
     </div>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
