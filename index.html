@@ -339,6 +339,31 @@
       margin-top: 12px;
     }
     
+    /* Module Objective Section */
+    .module-objective {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+      border-left: 4px solid var(--primary);
+      padding: 24px;
+      margin-bottom: 32px;
+      border-radius: 8px;
+    }
+    
+    .module-objective h3 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .module-objective p {
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    
     /* Activity List View */
     .activities-list {
       display: flex;
@@ -652,6 +677,10 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      
+      .module-objective {
+        padding: 16px;
+      }
     }
     
     /* Smooth scrolling */
@@ -772,7 +801,7 @@
             <a href="#" class="module-card" onclick="showModule('module1'); return false;">
               <span class="module-icon">📚</span>
               <h3>Module 1</h3>
-              <p>Fundamentals of Communication</p>
+              <p>Building my professional voice</p>
               <span class="module-badge">3 Activities</span>
             </a>
 
@@ -804,17 +833,24 @@
           <a href="#" class="back-btn" onclick="showView('modules'); return false;">
             ← Back to Modules
           </a>
-          <h2>📚 Module 1: Fundamentals of Communication</h2>
+          <h2>📚 Module 1: Building my professional voice</h2>
+          
+          <!-- Main Objective Section -->
+          <div class="module-objective">
+            <h3>🎯 Main Objective</h3>
+            <p>Integrate intercultural communication principles, professional feedback strategies, and personal branding tools to build a consistent and credible professional voice in international business environments.</p>
+          </div>
+
           <div class="activities-list">
             <a href="#" class="activity-item" onclick="showActivity('module1', 'activity1'); return false;">
               <div class="activity-header">
-                <h4 class="activity-title">Activity 1.1: Written Communication Analysis</h4>
+                <h4 class="activity-title">Activity 1.1: My dream job</h4>
                 <span class="activity-type">Analysis</span>
               </div>
-              <p class="activity-description">Analysis of professional emails and business correspondence</p>
+              <p class="activity-description">Think about your future dream job and prepare a 2-minute talk about it</p>
               <div class="activity-meta">
-                <span class="activity-meta-item">📅 Week 1-2</span>
-                <span class="activity-meta-item">⏱️ 4 hours</span>
+                <span class="activity-meta-item">📅 Week 1</span>
+                <span class="activity-meta-item">⏱️ 2 hours</span>
                 <span class="activity-meta-item">📝 Individual work</span>
               </div>
             </a>
@@ -853,6 +889,13 @@
             ← Back to Modules
           </a>
           <h2>📚 Module 2: Business Communication</h2>
+          
+          <!-- Main Objective Section -->
+          <div class="module-objective">
+            <h3>🎯 Main Objective</h3>
+            <p>To master professional business communication techniques including formal writing, negotiation strategies, and effective meeting management in corporate environments.</p>
+          </div>
+
           <div class="activities-list">
             <a href="#" class="activity-item" onclick="showActivity('module2', 'activity1'); return false;">
               <div class="activity-header">
@@ -901,6 +944,13 @@
             ← Back to Modules
           </a>
           <h2>📚 Module 3: Intercultural Communication</h2>
+          
+          <!-- Main Objective Section -->
+          <div class="module-objective">
+            <h3>🎯 Main Objective</h3>
+            <p>To develop cultural awareness and effective communication strategies for working in diverse, multicultural business environments and international contexts.</p>
+          </div>
+
           <div class="activities-list">
             <a href="#" class="activity-item" onclick="showActivity('module3', 'activity1'); return false;">
               <div class="activity-header">
@@ -949,6 +999,13 @@
             ← Back to Modules
           </a>
           <h2>📚 Module 4: Digital Communication & Media</h2>
+          
+          <!-- Main Objective Section -->
+          <div class="module-objective">
+            <h3>🎯 Main Objective</h3>
+            <p>To master digital communication tools and strategies, including social media management, video production, and crisis communication in the digital age.</p>
+          </div>
+
           <div class="activities-list">
             <a href="#" class="activity-item" onclick="showActivity('module4', 'activity1'); return false;">
               <div class="activity-header">
@@ -991,74 +1048,40 @@
           </div>
         </div>
 
-        <!-- Activity Details - Module 1, Activity 1 -->
+        <!-- Activity Details remain the same as before -->
+        <!-- Module 1, Activity 1 Detail -->
         <div id="module1-activity1-view" class="view">
           <a href="#" class="back-btn" onclick="showModule('module1'); return false;">
             ← Back to Activities
           </a>
           <div class="activity-detail">
             <div class="activity-detail-header">
-              <h3 class="activity-detail-title">Written Communication Analysis</h3>
+              <h3 class="activity-detail-title">Building my professional voice</h3>
               <div class="activity-detail-meta">
                 <span>📚 Module 1</span>
-                <span>📅 Week 1-2</span>
-                <span>⏱️ 4 hours</span>
+                <span>📅 Week 1</span>
+                <span>⏱️ 2 hours</span>
                 <span>📝 Individual work</span>
               </div>
             </div>
 
             <div class="detail-section">
-              <h4>🎯 Objective</h4>
-              <p>To understand the difference between formal and informal communication in professional contexts and develop skills in analyzing business correspondence.</p>
-            </div>
+      
 
             <div class="detail-section">
               <h4>📋 Description</h4>
               <p>This activity involves analyzing various types of professional emails and business letters. Students examine tone, structure, language choice, and appropriateness for different business situations.</p>
             </div>
 
-            <div class="detail-section">
-              <h4>✅ Tasks Completed</h4>
-              <ul>
-                <li>Analyzed 10 different email samples from various business contexts</li>
-                <li>Identified formal vs informal language patterns</li>
-                <li>Created a style guide for professional correspondence</li>
-                <li>Rewrote informal emails into formal business format</li>
-                <li>Presented findings to the class</li>
-              </ul>
-            </div>
+            
 
             <div class="detail-section">
               <h4>🛠️ Tools & Resources Used</h4>
               <div class="tools-grid">
-                <span class="tool-tag">Microsoft Word</span>
-                <span class="tool-tag">Grammar Checkers</span>
-                <span class="tool-tag">Business Writing Style Guides</span>
-                <span class="tool-tag">Email Templates</span>
-              </div>
-            </div>
+               
+                <span class="tool-tag">Grammar Checkers chat GPT</span>
+                  
 
-            <div class="detail-section">
-              <h4>💡 Learning Outcomes</h4>
-              <ul>
-                <li>Improved understanding of professional writing standards</li>
-                <li>Enhanced ability to adapt tone to different audiences</li>
-                <li>Better grasp of email etiquette in business</li>
-                <li>Developed critical analysis skills for written communication</li>
-              </ul>
-            </div>
-
-            <div class="detail-section">
-              <h4>📊 Results & Reflection</h4>
-              <p>Successfully identified key differences in communication styles and received an A grade on the assignment. The activity helped me understand how crucial clarity and professionalism are in written business communication.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Continue with remaining activity details... (truncated for brevity) -->
-        <!-- You would add similar detail views for all other activities -->
-
-      </div>
     </section>
 
     <section id="contact">
